@@ -137,7 +137,7 @@ export default function Page() {
 
         <button
           onClick={() => destroyRoom()}
-          className="text-xs bg-zinc-800 hover:bg-red-600 px-3 py-1.5 rounded text-zinc-400 hover:text-white font-bold transition-all group flex items-center gap-2 disaled:opacity-50"
+          className="text-xs bg-zinc-800 hover:bg-red-600 px-3 py-1.5 rounded text-zinc-400 hover:text-white font-bold transition-all group flex items-center gap-2 disaled:opacity-50 cursor-pointer"
         >
           <span className="group-hover:animate-pulse">💣</span>
           DESTROY NOW
@@ -153,7 +153,10 @@ export default function Page() {
           </div>
         )}
         {messages?.messages.map((msg) => (
-          <div key={msg.id} className="flex flex-col items-start">
+          <div
+            key={msg.id}
+            className={`flex flex-col ${msg.sender === username ? "items-end" : "items-start"}`}
+          >
             <div className="max-w-[80%] group">
               <div className="flex items-baseline gap-3 mb-1">
                 <span
