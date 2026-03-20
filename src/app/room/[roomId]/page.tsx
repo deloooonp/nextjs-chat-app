@@ -109,12 +109,14 @@ export default function Page() {
       <header className="border-b border-zinc-800 p-4 flex items-center justify-between bg-zinc-900/30">
         <div className="flex items-center gap-4">
           <div className="flex flex-col">
-            <span className="text-xs text-zinc-500 uppercase">Room ID</span>
+            <span className="text-xs md:text-md text-zinc-500 uppercase">
+              Room ID
+            </span>
             <div className="flex items-center gap-2">
               <span className="font-bold text-green-500">{roomId}</span>
               <button
                 onClick={copyLink}
-                className="text-[10px] bg-zinc-800 hover:bg-zinc-700 px-2 py-0.5 rounded text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer"
+                className="text-sm bg-zinc-800 hover:bg-zinc-700 px-2 py-0.5 rounded text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer"
               >
                 {copyStatus}
               </button>
@@ -122,11 +124,11 @@ export default function Page() {
           </div>
           <div className="h-8 w-px bg-zinc-800" />
           <div className="flex flex-col">
-            <span className="text-xs text-zinc-500 uppercase">
+            <span className="text-xs md:text-md text-zinc-500 uppercase">
               Self-Destruct
             </span>
             <span
-              className={`text-sm font-bold flex items-center gap-2 ${timeRemaining !== null && timeRemaining < 60 ? "text-red-500" : "text-amber-500"}`}
+              className={`text-sm md:text-lg font-bold flex items-center gap-2 ${timeRemaining !== null && timeRemaining < 60 ? "text-red-500" : "text-amber-500"}`}
             >
               {timeRemaining !== null
                 ? formatTimeRemaining(timeRemaining)
@@ -137,7 +139,7 @@ export default function Page() {
 
         <button
           onClick={() => destroyRoom()}
-          className="text-xs bg-zinc-800 hover:bg-red-600 px-3 py-1.5 rounded text-zinc-400 hover:text-white font-bold transition-all group flex items-center gap-2 disaled:opacity-50 cursor-pointer"
+          className="text-xs md:text-lg bg-zinc-800 hover:bg-red-600 px-3 py-1.5 rounded text-zinc-400 hover:text-white font-bold transition-all group flex items-center gap-2 disaled:opacity-50 cursor-pointer"
         >
           <span className="group-hover:animate-pulse">💣</span>
           DESTROY NOW
@@ -160,15 +162,17 @@ export default function Page() {
             <div className="max-w-[80%] group">
               <div className="flex items-baseline gap-3 mb-1">
                 <span
-                  className={`text-xs font-bold ${msg.sender === username ? "text-green-500" : "text-blue-500"}`}
+                  className={`text-xs md:text-lg font-bold ${msg.sender === username ? "text-green-500" : "text-blue-500"}`}
                 >
                   {msg.sender === username ? "YOU" : msg.sender}
                 </span>
-                <span className="text-[10px] text-zinc-600">
+                <span className="text-xs md:text-md  text-zinc-500">
                   {format(msg.timestamp, "HH:mm")}
                 </span>
               </div>
-              <p className="text-sm text-zinc-300 leading-relaxed break-all">
+              <p
+                className={`text-sm md:text-lg text-zinc-300 leading-relaxed break-all ${msg.sender === username ? "flex justify-end" : ""} `}
+              >
                 {msg.text}
               </p>
             </div>
