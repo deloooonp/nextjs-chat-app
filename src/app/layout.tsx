@@ -9,7 +9,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anonymous Chat App",
+  title: ">private_chat",
   description: "A private, self-destructing chat room.",
 };
 
