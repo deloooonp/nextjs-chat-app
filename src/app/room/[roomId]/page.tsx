@@ -106,7 +106,7 @@ export default function Page() {
 
   return (
     <main className="flex flex-col h-screen max-h-screen overflow-hidden">
-      <header className="border-b border-zinc-800 p-4 flex items-center justify-between bg-zinc-900/30">
+      <header className="border-b border-zinc-800 p-4 flex flex-col md:flex-row items-center justify-between bg-zinc-900/30">
         <div className="flex items-center gap-4">
           <div className="flex flex-col">
             <span className="text-xs md:text-md text-zinc-500 uppercase">
@@ -139,7 +139,7 @@ export default function Page() {
 
         <button
           onClick={() => destroyRoom()}
-          className="text-xs md:text-lg bg-zinc-800 hover:bg-red-600 px-3 py-1.5 rounded text-zinc-400 hover:text-white font-bold transition-all group flex items-center gap-2 disaled:opacity-50 cursor-pointer"
+          className="text-md md:text-lg mt-2 md:mt-0 bg-zinc-800 hover:bg-red-600 px-3 py-1.5 rounded text-zinc-400 hover:text-white font-bold transition-all group flex items-center gap-2 disaled:opacity-50 cursor-pointer"
         >
           <span className="group-hover:animate-pulse">💣</span>
           DESTROY NOW
