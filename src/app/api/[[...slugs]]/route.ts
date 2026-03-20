@@ -1,9 +1,9 @@
+import { Message, realtime } from "@/lib/realtime";
 import { redis } from "@/lib/redis";
 import { Elysia } from "elysia";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { authMiddleware } from "./auth";
-import { Message, realtime } from "@/lib/realtime";
 
 const ROOM_TTL_SECONDS = 60 * 10;
 
